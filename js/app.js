@@ -16,7 +16,7 @@ const isLiked = (id) => {
 };
 //change code 1
 const addToLiked = (id) => {
-  //hart button 
+  //heart button 
   likedPostsId.push(id);
   const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
   showPosts(remainingPosts);
@@ -38,19 +38,17 @@ const switchTab = (id) => {
     document.getElementById("posts").style.display = "grid";
     document.getElementById("liked").style.display = "none";
     document.getElementById("reported").style.display = "none";
-    document.getElementById('question').style.display = 'block'
   } else if (id === "liked") {
     document.getElementById("liked").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("reported").style.display = "none";
-    document.getElementById('question').style.display = 'block'
-
 
     displayLikedPosts();
   } else {
     document.getElementById("reported").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("liked").style.display = "none";
+
 
     displayReportedPosts();
   }
@@ -151,7 +149,7 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
-  //
+
   document.getElementById("liked").textContent = '';
   likedPosts.forEach((post) => {
     const div = createPost(post);
