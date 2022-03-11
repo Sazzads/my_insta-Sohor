@@ -14,9 +14,9 @@ const getReportedPosts = () => {
 const isLiked = (id) => {
   return likedPostsId?.length && !!likedPostsId.includes(id);
 };
-//change code 1
+
 const addToLiked = (id) => {
-  //heart button 
+  //heart button add
   likedPostsId.push(id);
   const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
   showPosts(remainingPosts);
